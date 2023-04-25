@@ -1,0 +1,60 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# ------------------------------------------------ WEB ------------------------------------------------
+
+GET         /                                   controllers.Application.index()
+
+# ------------------------------------------------ API ------------------------------------------------
+POST    /getCustomer                                     controllers.Application.getCustomer()
+
+# --- QCustomer Types ---
+GET         /api/qcustomertypes                 controllers.api.QCustomerType.list()
+GET         /api/qcustomertypes/:id             controllers.api.QCustomerType.retrieve(id: Long)
+DELETE      /api/qcustomertypes/:id             controllers.api.QCustomerType.delete(id: Long)
+PUT         /api/qcustomertypes/:id             controllers.api.QCustomerType.update(id: Long)
+POST        /api/qcustomertypes                 controllers.api.QCustomerType.create()
+
+# --- Rules ---
+GET         /api/rules                   controllers.api.Rule.list()
+GET         /api/rules/:id               controllers.api.Rule.retrieve(id: Long)
+DELETE      /api/rules/:id               controllers.api.Rule.delete(id: Long)
+POST        /api/rules                   controllers.api.Rule.create()
+PUT         /api/rules/:id               controllers.api.Rule.update(id: Long)
+
+# --- cService ---
+GET         /api/services                       controllers.api.Service.list()
+POST        /api/service                        controllers.api.Service.create()
+PUT         /api/service/:id                    controllers.api.Service.update(id: Long)
+DELETE      /api/service/:id                    controllers.api.Service.delete(id: Long)
+GET         /api/service/:id/parameters         controllers.api.Service.serviceParameters(id: Long)
+GET         /api/service/:name/name             controllers.api.Service.findByName(name: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# Support
+GET     /monitor                                         controllers.Monitor.getMonitorsStatus()
+GET     /support/logs                                    controllers.Support.downloadLogs(zipIncluded = "true")
+GET     /support/activelogs                              controllers.Support.downloadLogs(zipIncluded = "false")
+GET     /api/root/loggers                                controllers.Support.getLoggers()
+GET     /api/root/logger/:name                           controllers.Support.getLoggerLevel(name: String)
+PUT     /api/root/logger/:name/:level                    controllers.Support.setLoggerLevel(name: String,level: String)
+
+
+
+
+#Bootcampdebmedia
+GET     /gatos                                 controllers.api.GatoController.getGatos()
+POST    /gatos                                    controllers.api.GatoController.createGato()
+DELETE  /gatos/:id                              controllers.api.GatoController.delete(id:Long)
+GET     /gatos/:id                               controllers.api.GatoController.getById(id:Long)
+PUT     /gatos                                    controllers.api.GatoController.updateGato()
+
+
+GET  /duenios                                       controllers.api.DuenioController.getDuenios()
+POST    /duenios                                       controllers.api.DuenioController.createDuenio()
+DELETE /duenios/:id                                 controllers.api.DuenioController.delete(id:Long)
+GET    /duenios/:id                                    controllers.api.DuenioController.getById(id:Long)
+PUT     /duenios                                   controllers.api.DuenioController.updateDuenio()

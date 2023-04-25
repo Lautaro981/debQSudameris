@@ -1,0 +1,75 @@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>@title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png ")">
+    <!-- Base Styles -->
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("frontAssets/css/main.css ")">
+    <!-- Libraries Styles -->
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("lib/datetimepicker/datetimepicker.css ")">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("frontAssets/css/custom.css ")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("frontAssets/css/isteven-multi-select.css ")">
+    <!-- Libraries -->
+    <script src="@routes.Assets.at("lib/angular/angular.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/angular/angular-animate.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/angular/angular-ui-router.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/jquery/jquery-2.2.3.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/angular-toastr/angular-toastr.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/angular-toastr/angular-toastr.tpls.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/angular/angular-breadcrumb.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/momentjs/moment.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/bootstrap/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/datetimepicker/datetimepicker.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/datetimepicker/datetimepicker.templates.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("lib/isteven/isteven-multi-select.js")" type="text/javascript"></script>
+    <!-- /Libraries -->
+    <!-- App -->
+    <script src="@routes.Assets.at("frontAssets/js/angular-app.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/config.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/services/profileMenuService.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/directives/domDirectives.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/dashCtrl.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/userDetailCtrl.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/userEditCtrl.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/configs/fixesForOldBrowsers.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/supportCtrl.js ")" type="text/javascript"></script>
+
+    <!-- Services -->
+    <script src="@routes.Assets.at("frontAssets/js/configs/servicesConf.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/services/servicesService.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/servicesListCtrl.js ")" type="text/javascript"></script>
+    <!-- /Services -->
+
+    <!-- QCustomerType -->
+    <script src="@routes.Assets.at("frontAssets/js/controllers/qCustomerTypesCtrl.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/configs/qCustomerTypesConf.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/services/qCustomerTypesService.js ")" type="text/javascript"></script>
+    <!-- /QCustomerType -->
+
+    <!-- Rules -->
+    <script src="@routes.Assets.at("frontAssets/js/configs/rulesConf.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/services/rulesService.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/rulesCtrl.js ")" type="text/javascript"></script>
+    <!-- /Rules -->
+
+        <!-- Rules -->
+    <script src="@routes.Assets.at("frontAssets/js/configs/GatoConf.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/services/gatoService.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/gatoCtrl.js ")" type="text/javascript"></script>
+        <!-- /Rules -->
+
+        <!-- Rules -->
+    <script src="@routes.Assets.at("frontAssets/js/configs/DuenioConf.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/services/duenioService.js ")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("frontAssets/js/controllers/duenioCtrl.js ")" type="text/javascript"></script>
+        <!-- /Rules -->
+
+    <!-- /App -->
+</head>
+<body>
+    @content
+</body>
+</html>

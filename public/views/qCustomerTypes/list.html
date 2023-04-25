@@ -1,0 +1,47 @@
+<div class="row" data-ng-init="init()">
+    <div class="col-lg-12 text-right">
+        <div class="button-container">
+            <button class="button color-green" ui-sref=".new">Agregar {{label}}</button>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="theme-default debcontainer">
+            <div class="header-debcontainer">
+                <p>{{ label }}</p>
+            </div>
+            <div class="content-debcontainer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover text-center">
+                            <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>{{label}}</th>
+                                <th>ID DebQ</th>
+                            </tr>
+                            <tr data-ng-repeat="value in values">
+                                <td>{{ value.id }}</td>
+                                <td>{{ value.label }}</td>
+                                <td>{{ value.id_q }}</td>
+                                <td class="text-center buttons-container">
+                                    <div class=" connector-buttons">
+                                        <button type="button" title="Ver" class="btn btn-info button-icon watch" ui-sref="{{name}}.show({ {{name}}Id: value.id})">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                        <button type="button" title="Editar" class="btn btn-warning button-icon edit" ui-sref="{{name}}.show.edit({ {{name}}Id: value.id})">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button type="button" ng-if="value.label != 'No cliente'" title="Borrar" class="btn btn-danger button-icon remove" data-ng-click="delete(value)">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

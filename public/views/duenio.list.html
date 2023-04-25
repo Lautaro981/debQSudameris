@@ -1,0 +1,53 @@
+<table border>
+  <tr>
+    <td><strong>ID</strong></td>
+    <td><strong>Nombre</strong></td>
+    <td><strong >Edad</strong></td>
+    <td><strong>Email</strong> </td>
+    <td><strong>Accion</strong></td>
+    <td><strong>Accion</strong></td>
+  </tr>
+  <tr ng-repeat="duenio in listadoDuenios">
+    <td>{{duenio.id}}</td>
+    <td>{{duenio.nombre}}</td>
+    <td>{{duenio.edad}}</td>
+    <td>{{duenio.email}}</td>
+    <td><button data-ng-click="delete(duenio.id)">Eliminar</button> </td>
+    <td><button data-ng-click="getDuenioById(duenio.id)">Obtener Dueño</button> </td>
+  </tr>
+</table>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="theme-default debcontainer">
+      <div class="header-debcontainer">
+        <p>Crear Dueños</p>
+      </div>
+      <div class="content-container">
+        <div class="row" style="padding:0">
+          <div class="col-md-12">
+            <form role="form" data-ng-submit="save()">
+
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control" data-ng-model="duenio.nombre" required>
+              </div>
+              <div>
+                <label for="edad">Edad</label>
+                <input type="text" id="edad" class="form-control" data-ng-model="duenio.edad" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control" data-ng-model="duenio.email" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-primary" data-ng-click="update()">Actualizar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

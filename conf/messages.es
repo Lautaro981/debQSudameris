@@ -1,0 +1,7 @@
+CONTROLLERS_SIGNSERVICES_MISSING_DEBSIGN_CONFIGS="Faltan las configuraciones del debsign en el archivo application.conf"
+CONTROLLERS_SUPPORT_ERROR_ZIP="Error en la creación de logs.zip"
+CONTROLLERS_SUPPORT_ERROR_GET_LOGS="Error obteniendo los logs del logger.xml"
+CONTROLLERS_SUPPORT_ERROR_GET_LOG_LEVEL="Error obteniendo el nivel de un log específico."
+CONTROLLERS_SUPPORT_ERROR_SET_LOG_LEVEL="Error seteando el nivel de un log específico."
+CONTROLLERS_SUPPORT_INVALID_LOGGER_NAME="El nombre del logger es inválido"
+CONTROLLERS_APPLICATION_ERROR_GET_JACKPOT="Error leyendo el archivo."

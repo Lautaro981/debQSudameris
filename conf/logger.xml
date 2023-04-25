@@ -1,0 +1,73 @@
+<configuration>
+
+    <property file="conf/application.conf"/>
+
+    <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
+
+    <appender name="APPLICATION_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logs.path}/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logs.path}/application.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <maxHistory>14</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date;[%level];%logger{1};%message;%ex{full}%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="MODELS_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logs.path}/models.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logs.path}/models.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <maxHistory>14</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date;[%level];%logger{1};%message;%ex{full}%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="APPLICATION_FILE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>500</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <appender-ref ref="APPLICATION_FILE" />
+    </appender>
+
+    <appender name="MODELS_FILE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>500</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <appender-ref ref="MODELS_FILE" />
+    </appender>
+
+    <!-- Off these ones as they are annoying, and anyway we manage configuration ourself -->
+    <logger name="com.avaje.ebean.config.PropertyMapLoader" level="OFF" />
+    <logger name="com.avaje.ebeaninternal.server.core.XmlConfigLoader" level="OFF" />
+    <logger name="com.avaje.ebeaninternal.server.lib.BackgroundThread" level="OFF" />
+    <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
+    <logger name="org.avaje.ebean.SQL" level="OFF"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%coloredLevel - %logger - %message %ex{full}%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ERROR">
+        <appender-ref ref="APPLICATION_FILE_ASYNC"/>
+    </root>
+
+    <logger name="play" level="INFO" />
+
+    <logger additivity="false" name="connector" level="INFO">
+        <appender-ref ref="APPLICATION_FILE_ASYNC"/>
+    </logger>
+
+    <logger additivity="false" name="utils" level="ERROR">
+        <appender-ref ref="APPLICATION_FILE_ASYNC"/>
+    </logger>
+
+    <logger additivity="false" name="models" level="ERROR">
+        <appender-ref ref="MODELS_FILE_ASYNC"/>
+    </logger>
+
+</configuration>
+

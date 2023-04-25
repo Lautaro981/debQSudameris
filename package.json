@@ -1,0 +1,22 @@
+{
+  "name": "debqsudameris",
+  "version": "1.0.5",
+  "description": "Conector de Banco Sudameris",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debmedia/debQClients.git"
+  },
+  "author": "jmordonezdeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/debmedia/debQClients/issues"
+  },
+  "homepage": "https://github.com/debmedia/debQClients#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-execute": "^0.2.2",
+    "grunt-string-replace": "^1.3.1"
+  }
+}

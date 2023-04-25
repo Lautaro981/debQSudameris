@@ -1,0 +1,69 @@
+[
+    {
+        "attribute": {
+            "name": "services",
+            "url": "services",
+            "label": "Services",
+            "groupName": "cat-0",
+            "groupLabel": "",
+            "groupIcon": "language",
+            "isDisplayed": true
+        }
+    },
+    {
+        "attribute": {
+            "name": "Support",
+            "url": "support",
+            "label": "Soporte",
+            "groupName": "cat-1",
+            "groupLabel": "",
+            "groupIcon": "language",
+            "isDisplayed": true
+        }
+    },
+    {
+        "attribute": {
+            "name": "qCustomerTypes",
+            "url": "qCustomerTypes",
+            "label": "Tipos de cliente DebQ",
+            "groupName": "cat-2",
+            "groupLabel": "",
+            "groupIcon": "language",
+            "isDisplayed": true
+        }
+    },
+    {
+        "attribute": {
+            "name": "rules",
+            "url": "rules",
+            "label": "Mapeo de segmentos",
+            "groupName": "cat-6",
+            "groupLabel": "",
+            "groupIcon": "language",
+            "isDisplayed": true
+        }
+    },
+    {
+        "attribute": {
+            "name": "gato",
+            "url": "gato",
+            "label": "Gatos",
+            "groupName": "cat-7",
+            "groupLabel": "",
+            "groupIcon": "language",
+            "isDisplayed": true
+        }
+    },
+
+    {
+        "attribute": {
+            "name": "duenio",
+            "url": "duenio",
+            "label": "Dueños",
+            "groupName": "cat-8",
+            "groupLabel": "",
+            "groupIcon": "language",
+            "isDisplayed": true
+        }
+    }
+]

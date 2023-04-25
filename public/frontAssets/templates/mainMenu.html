@@ -1,0 +1,19 @@
+<li class="main-navbar__item js-item {{menu.name}}" ng-repeat="menu in data">
+    <a class="main-navbar__link" href="javascript:void(0)" ng-if="menu.categories.length >= 2">
+        <i class="material-icons">{{menu.icon}}</i>
+        <span>{{menu.label}}</span>
+    </a>
+    <a class="main-navbar__link" ng-click="func({url: menu.categories[0].attribute.url})" href="javascript:void(0)" ng-if="menu.categories.length === 1">
+        <i class="material-icons">{{menu.icon}}</i>
+        <span>{{menu.categories[0].attribute.label}}</span>
+    </a>
+    <ul ng-if="menu.categories.length > 1" ng-if="!collapsed" id="subnav{{$index}}" class="main-navbar__submenu js-submenu">
+        <li
+        ng-repeat="category in menu.categories" 
+        class="main-navbar__sublink"
+        ng-class="{ 'submenu--active' : $index == selectedIndex && $parent.$index == selectedParentIndex }"
+        ng-click="itemClicked($index,$parent.$index)">
+            <a ng-click="func({url: category.attribute.url})">{{category.attribute.label}}</a>
+        </li>
+    </ul>
+</li>

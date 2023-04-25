@@ -1,0 +1,48 @@
+/* Estilos custom para proyecto Supervielle */
+
+/* ## Generales ## */
+
+/* Tablas */
+.table > tbody > tr > th{
+	text-align: center;
+}
+/* Breadcrumbs */
+.content-container .topbar .breadcrumbs a {
+    color: #1d5592;
+}
+
+/* Contenedor con padding */
+.content-w-padding{
+    padding: 0 1em !important;
+}
+
+/* List group con boton de borrar */
+.list-flex{
+    display: flex;
+    align-items: center;
+}
+
+.list-flex .delete-button{
+    margin-left: auto;
+}
+
+.list-flex .delete-button i{
+    color: white;
+}
+
+/* Overflow dimensions box */
+.options-box{
+    min-height: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.min-95 {
+    min-height: 95px;
+}
+.padding-0 {
+    padding: 0;
+}
+.panel-body--padding {
+    padding: 15px 0px;
+}

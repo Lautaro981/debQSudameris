@@ -1,0 +1,53 @@
+<div class="row" data-ng-init="init()">
+    <div class="col-md-12 text-right">
+    </div>
+    <div class="col-md-12">
+        <div class="theme-default debcontainer">
+            <div class="header-debcontainer">
+                <p>Services</p>
+            </div>
+            <div class="content-debcontainer">
+                <div class="row" style="padding: 0 1em">
+                    <div class="col-md-12">
+                        <div class="panel-group" id="services-group">
+                            <div class="panel panel-default" data-ng-repeat="service in services">
+                                <div class="panel-heading" data-collapse="'#service' + service.id" data-parent="'#services-group'">
+                                    <h3 class="panel-title">{{ service.name }}</h3>
+                                </div>
+                                dashCtrl <div class="panel-collapse collapse" id="service{{ service.id }}">
+                                    <div class="panel-body">
+                                        <div class="row form-group" data-ng-repeat="attr in service.attributes">
+                                            <div ng-switch="service.name">
+                                                <div ng-switch-default class="col-sm-8">
+                                                    <label for="input{{ attr.id }}" class="col-sm-4 control-label">{{ attr.attribute }}</label>
+                                                </div>
+                                            </div>
+                                            <div ng-switch="attr.attribute">
+                                                <div ng-switch-when="password" class="col-sm-8">
+                                                    <input type="password" id="input{{ attr.id }}" class="form-control" data-ng-model="attr.attributeValue"></input>
+                                                </div>
+                                                <div ng-switch-when="template" class="col-sm-8">
+                                                    <textarea id="input{{ attr.id }}" class="form-control" rows="3" data-ng-model="attr.attributeValue"></textarea>
+                                                </div>
+                                                <div ng-switch-when="Template Btinreq" class="col-sm-8">
+                                                    <textarea id="input{{ attr.id }}" class="form-control" rows="3" data-ng-model="attr.attributeValue"></textarea>
+                                                </div>
+                                                <div ng-switch-when="Template Parametros" class="col-sm-8">
+                                                    <textarea id="input{{ attr.id }}" class="form-control" rows="3" data-ng-model="attr.attributeValue"></textarea>
+                                                </div>
+                                                <div ng-switch-default class="col-sm-8">
+                                                    <input type="text" id="input{{ attr.id }}" class="form-control" data-ng-model="attr.attributeValue"></input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-success pull-right" data-ng-click="save(service)">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

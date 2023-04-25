@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-12 text-right">
+        <div class="button-container">
+            <button class="button color-green m-sides-10" ui-sref="users.new">Nuevo</button>
+        </div>
+    </div>
+	<div class="col-md-12">
+        <div class="theme-default debcontainer">
+        <div class="header-debcontainer">
+        	<p>Usuarios</p>
+        </div>
+        <div class="content-debcontainer">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-hover text-center">
+                        <tbody>
+                        <tr>
+                            <th>User</th>
+                            <th>E-mail</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Compañia</th>
+                            <th>Acciones</th>
+                        </tr>
+                        <tr>
+                            <td>root</td>
+                            <td>root@debmedia.com</td>
+                            <td>root</td>
+                            <td>root</td>
+                            <td>root_company</td>
+                            <td> 
+                            	<a ui-sref="users.detail({userId: 1})">Ver más</a>
+                            	<a ui-sref="users.detail.edit({userId: 1})">Editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                   </table>
+                </div>
+            </div>
+        </div></div>
+    </div>
+</div>

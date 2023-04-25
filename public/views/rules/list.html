@@ -1,0 +1,47 @@
+<div class="row" data-ng-init="init()">
+	<div class="col-md-12 text-right">
+        <div class="button-container">
+            <button class="button color-green m-sides-10" ui-sref=".new">Nueva</button>
+        </div>
+    </div>
+	<div class="col-md-12">
+        <div class="theme-default debcontainer">
+            <div class="header-debcontainer">
+                <p>{{label}}</p>
+            </div>
+            <div class="content-debcontainer">
+                <div class="row" style="padding: 0 1em">
+                    <div class="col-md-12">
+                        <table class="table table-hover text-center">
+                            <tbody>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Número de segmento</th>
+                                    <th>Tipo de cliente DebQ</th>
+                                </tr>
+                                <tr data-ng-repeat="value in values">
+                                    <td>{{ value.id }}</td>
+                                    <td>{{ value.segment }}</td>
+                                    <td>{{ value.qCustomerType.label }}</td>
+                                    <td class="text-center buttons-container">
+                                        <div class=" connector-buttons">
+                                            <button type="button" title="Ver" class="btn btn-info button-icon watch" ui-sref="{{name}}.show({ {{name}}Id: value.id})">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                            <button type="button" title="Editar" class="btn btn-warning button-icon edit" ui-sref="{{name}}.show.edit({ {{name}}Id: value.id})">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>
+                                            <button type="button" title="Borrar" class="btn btn-danger button-icon remove" data-ng-click="delete(value)">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

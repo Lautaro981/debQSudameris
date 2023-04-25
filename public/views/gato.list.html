@@ -1,0 +1,83 @@
+
+    <table border >
+        <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>Nombre</strong></td>
+            <td><strong >Raza</strong></td>
+            <td> <strong>Color Ojos</strong></td>
+            <td> <strong>Color Pelo</strong></td>
+            <td> <strong>Cantidad Patas</strong></td>
+            <td> <strong>¿Mordelon?</strong></td>
+            <td> <strong>Duenio ID</strong></td>
+            <td>Accion</td>
+            <td>Accion</td>
+        </tr>
+
+        <tr ng-repeat="gato in listadoGatos">
+            <td>{{gato.id}}</td>
+            <td>{{gato.nombre}}</td>
+            <td>{{gato.raza}}</td>
+            <td>{{gato.colorOjos}}</td>
+            <td>{{gato.colorPelo}}</td>
+            <td>{{gato.cantPatas}}</td>
+            <td>{{gato.muerde}}</td>
+            <td>{{gato.duenio.id}}</td>
+            <td><button data-ng-click="delete(gato.id)">Eliminar</button> </td>
+            <td><button data-ng-click="getGatoById(gato.id)">Obtener Michi</button> </td>
+
+        </tr>
+
+    </table>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="theme-default debcontainer">
+                <div class="header-debcontainer">
+                    <p>Crear Michi</p>
+                </div>
+                <div class="content-container">
+                    <div class="row" style="padding:2px">
+                        <div class="col-md-12">
+                            <form role="form" data-ng-submit="save()">
+
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" id="nombre" class="form-control" data-ng-model="gato.nombre" required>
+                                </div>
+                                <div>
+                                    <label for="raza">Raza</label>
+                                    <input type="text" id="raza" class="form-control" data-ng-model="gato.raza" required>
+                                </div>
+                                <div>
+                                    <label for="colorOjos">Color de Ojos</label>
+                                    <input type="text" id="colorOjos" class="form-control" data-ng-model="gato.colorOjos" required>
+                                </div>
+                                <div>
+                                    <label for="colorPelo">Color de Pelo</label>
+                                    <input type="text" id="colorPelo" class="form-control" data-ng-model="gato.colorPelo" required>
+                                </div>
+                                <div>
+                                    <label for="cantPatas">Cantidad de patas</label>
+                                    <input type="text" id="cantPatas" class="form-control" data-ng-model="gato.cantPatas" required>
+                                </div>
+                                <div>
+                                    <label for="muerde">Muerde (Si = 1, No = 0)</label>
+                                    <input type="text" id="muerde" class="form-control" data-ng-model="gato.muerde" required>
+                                </div>
+                                <div>
+                                    <label for="id">ID Dueño</label>
+                                    <input type="text" id="id" class="form-control" data-ng-model="gato.duenio.id">
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button  class="btn btn-primary" data-ng-click="update()">Actualizar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

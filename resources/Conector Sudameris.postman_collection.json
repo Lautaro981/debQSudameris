@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "a241d6e4-4ee7-40a3-a673-55db51f6b8bf",
+		"name": "Conector Sudameris",
+		"description": "Api del conector y de los servicios de Banco Sudameris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Conector",
+			"item": [
+				{
+					"name": "Get Customer by NroDocumento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dni\":\"111111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlConector}}/getCustomer",
+							"host": [
+								"{{urlConector}}"
+							],
+							"path": [
+								"getCustomer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Customer by NroDocumento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dni\":\"111111\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{urlConector}}/getCustomer",
+									"host": [
+										"{{urlConector}}"
+									],
+									"path": [
+										"getCustomer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "633"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Test\",\n    \"dni\": \"111111\",\n    \"customerType\": {\n        \"id\": 2\n    },\n    \"extraFields\": [\n        {\n            \"Chequera Pendiente de Retiro\": \"Sí\",\n            \"showable\": [\n                {\n                    \"in\": \"workstation\",\n                    \"format\": \"onlyValue\"\n                }\n            ]\n        },\n        {\n            \"PIN A- TARJETA DE DEBITO\": \"Si\",\n            \"showable\": [\n                {\n                    \"in\": \"workstation\",\n                    \"format\": \"onlyValue\"\n                }\n            ]\n        },\n        {\n            \"PIN - TARJETA DE DEBITO\": \"No\",\n            \"showable\": [\n                {\n                    \"in\": \"workstation\",\n                    \"format\": \"onlyValue\"\n                }\n            ]\n        },\n        {\n            \"PIN B- TARJETA DE DEBITO\": \"Si\",\n            \"showable\": [\n                {\n                    \"in\": \"workstation\",\n                    \"format\": \"onlyValue\"\n                }\n            ]\n        },\n        {\n            \"PIN D- TARJETA DE DEBITO\": \"Si\",\n            \"showable\": [\n                {\n                    \"in\": \"workstation\",\n                    \"format\": \"onlyValue\"\n                }\n            ]\n        },\n        {\n            \"PIN C- TARJETA DE DEBITO\": \"No\",\n            \"showable\": [\n                {\n                    \"in\": \"workstation\",\n                    \"format\": \"onlyValue\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API Sudameris",
+			"item": [
+				{
+					"name": "Authentication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"DBMEDIAUSR\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"\"\n    },\n    \"UserId\": \"DBMEDIAUSR\",\n    \"UserPassword\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.100.14.2:9280/bantotal/servlet/com.dlya.bantotal.odwsbt_Authenticate?Execute",
+							"protocol": "http",
+							"host": [
+								"10",
+								"100",
+								"14",
+								"2"
+							],
+							"port": "9280",
+							"path": [
+								"bantotal",
+								"servlet",
+								"com.dlya.bantotal.odwsbt_Authenticate"
+							],
+							"query": [
+								{
+									"key": "Execute",
+									"value": null
+								}
+							]
+						},
+						"description": "Request para obtener el Sessiontoken que es el Token a usar en la ejecución de los demas servicios. "
+					},
+					"response": [
+						{
+							"name": "Authentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"\"\n    },\n    \"UserId\": \"RUIZMAU\",\n    \"UserPassword\": \"Sudameris2033\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://10.100.14.2:9280/bantotal/servlet/com.dlya.bantotal.odwsbt_Authenticate?Execute",
+									"protocol": "http",
+									"host": [
+										"10",
+										"100",
+										"14",
+										"2"
+									],
+									"port": "9280",
+									"path": [
+										"bantotal",
+										"servlet",
+										"com.dlya.bantotal.odwsbt_Authenticate"
+									],
+									"query": [
+										{
+											"key": "Execute",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "272"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(6.1.26)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"\"\n    },\n    \"SessionToken\": \"0ad875868d088C9B822DF6FA\",\n    \"Erroresnegocio\": {\n        \"BTErrorNegocio\": []\n    },\n    \"Btoutreq\": {\n        \"Numero\": \"3206\",\n        \"Servicio\": \"Authenticate.Execute\",\n        \"Estado\": \"OK\",\n        \"Fecha\": \"2020-09-17\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Hora\": \"01:13:28\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Segmento Persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"DBMEDIAUSR\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Parametros\": {\n        \"Parametro\": {\n            \"sBTRepParametros.It\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Nombre\": \"DOC\",\n                    \"Codigo\": 1,\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.100.14.2:9280/bantotal/servlet/com.dlya.bantotal.odwsbt_ConsultaReportesSQL?SegmentoPersona",
+							"protocol": "http",
+							"host": [
+								"10",
+								"100",
+								"14",
+								"2"
+							],
+							"port": "9280",
+							"path": [
+								"bantotal",
+								"servlet",
+								"com.dlya.bantotal.odwsbt_ConsultaReportesSQL"
+							],
+							"query": [
+								{
+									"key": "SegmentoPersona",
+									"value": null
+								}
+							]
+						},
+						"description": "Obtiene el nombre, apellido y segmento de una persona."
+					},
+					"response": [
+						{
+							"name": "Segmento Persona",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Parametros\": {\n        \"Parametro\": {\n            \"sBTRepParametros.It\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Nombre\": \"DOC\",\n                    \"Codigo\": 1,\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://10.100.14.2:9280/btservices/servlet/com.dlya.bantotal.odwsbt_ConsultaReportesSQL?SegmentoPersona",
+									"protocol": "https",
+									"host": [
+										"10",
+										"100",
+										"14",
+										"2"
+									],
+									"port": "9280",
+									"path": [
+										"btservices",
+										"servlet",
+										"com.dlya.bantotal.odwsbt_ConsultaReportesSQL"
+									],
+									"query": [
+										{
+											"key": "SegmentoPersona",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "569"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(6.1.26)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"dd103af0ac088C9B822DF6FA\"\n    },\n    \"Mens\": \"\",\n    \"Result\": {\n        \"Consultas\": {\n            \"RepCons.Consulta\": [\n                {\n                    \"Correlativo\": \"5\",\n                    \"Top\": \"1\",\n                    \"Columnas\": {\n                        \"RepCols.Columna\": [\n                            {\n                                \"Numero\": \"5\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"Test\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"APENOM\"\n                            },\n                            {\n                                \"Numero\": \"10\",\n                                \"Tipo\": \"E\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"10\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"SEGM\"\n                            },\n                            {\n                                \"Numero\": \"15\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"Persona\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"NOMSEGM\"\n                            }\n                        ]\n                    },\n                    \"Nombre\": \"DATOS_PERS\"\n                }\n            ]\n        },\n        \"Usuario\": \"RUIZMAU\",\n        \"Codigo\": \"90101\",\n        \"Nombre\": \"WS PERSONAS TOTEM\",\n        \"Parametros\": {\n            \"RepParm.Parametro\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Codigo\": \"1\",\n                    \"Nombre\": \"DOC\",\n                    \"Valor\": \"5978597\"\n                }\n            ]\n        }\n    },\n    \"Erroresnegocio\": {\n        \"BTErrorNegocio\": []\n    },\n    \"Btoutreq\": {\n        \"Numero\": \"3222\",\n        \"Estado\": \"OK\",\n        \"Servicio\": \"ConsultaReportesSQL.SegmentoPersona\",\n        \"Fecha\": \"2020-09-17\",\n        \"Requerimiento\": \"1\",\n        \"Hora\": \"02:04:15\",\n        \"Canal\": \"BTINTERNO\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Chequera pendiente de retiro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"DBMEDIAUSR\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Parametros\": {\n        \"Parametro\": {\n            \"sBTRepParametros.It\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Nombre\": \"DOC\",\n                    \"Codigo\": 1,\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.100.14.2:9280/bantotal/servlet/com.dlya.bantotal.odwsbt_ConsultaReportesSQL?ChequeraPendRetiro",
+							"protocol": "http",
+							"host": [
+								"10",
+								"100",
+								"14",
+								"2"
+							],
+							"port": "9280",
+							"path": [
+								"bantotal",
+								"servlet",
+								"com.dlya.bantotal.odwsbt_ConsultaReportesSQL"
+							],
+							"query": [
+								{
+									"key": "ChequeraPendRetiro",
+									"value": null
+								}
+							]
+						},
+						"description": "Devuelve si un cliente tiene chequeras pendiente de retiro."
+					},
+					"response": [
+						{
+							"name": "Chequera pendiente de retiro",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Parametros\": {\n        \"Parametro\": {\n            \"sBTRepParametros.It\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Nombre\": \"DOC\",\n                    \"Codigo\": 1,\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://10.100.14.2:9280/btservices/servlet/com.dlya.bantotal.odwsbt_ConsultaReportesSQL?ChequeraPendRetiro",
+									"protocol": "https",
+									"host": [
+										"10",
+										"100",
+										"14",
+										"2"
+									],
+									"port": "9280",
+									"path": [
+										"btservices",
+										"servlet",
+										"com.dlya.bantotal.odwsbt_ConsultaReportesSQL"
+									],
+									"query": [
+										{
+											"key": "ChequeraPendRetiro",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "626"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(6.1.26)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Mens\": \"\",\n    \"Result\": {\n        \"Consultas\": {\n            \"RepCons.Consulta\": [\n                {\n                    \"Correlativo\": \"15\",\n                    \"Top\": \"2\",\n                    \"Nombre\": \"CHEQUERA_PEND_RETIRO\",\n                    \"Columnas\": {\n                        \"RepCols.Columna\": [\n                            {\n                                \"Numero\": \"5\",\n                                \"Tipo\": \"E\",\n                                \"Descripcion\": \"SCCTA\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"1719129\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"1719129\"\n                                        }\n                                    ]\n                                }\n                            },\n                            {\n                                \"Numero\": \"10\",\n                                \"Tipo\": \"I\",\n                                \"Descripcion\": \"SCSDO\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"1.00\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"1.00\"\n                                        }\n                                    ]\n                                }\n                            },\n                            {\n                                \"Numero\": \"15\",\n                                \"Tipo\": \"D\",\n                                \"Descripcion\": \"SCFVAL\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"20190710\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"20190710\"\n                                        }\n                                    ]\n                                }\n                            }\n                        ]\n                    }\n                }\n            ]\n        },\n        \"Usuario\": \"RUIZMAU\",\n        \"Codigo\": \"90101\",\n        \"Nombre\": \"WS PERSONAS TOTEM\",\n        \"Parametros\": {\n            \"RepParm.Parametro\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Codigo\": \"1\",\n                    \"Nombre\": \"DOC\",\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    },\n    \"Erroresnegocio\": {\n        \"BTErrorNegocio\": []\n    },\n    \"Btoutreq\": {\n        \"Numero\": \"3193\",\n        \"Estado\": \"OK\",\n        \"Servicio\": \"ConsultaReportesSQL.ChequeraPendRetiro\",\n        \"Requerimiento\": \"1\",\n        \"Fecha\": \"2020-09-16\",\n        \"Canal\": \"BTINTERNO\",\n        \"Hora\": \"15:59:26\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Tarjeta pendiente de entrega",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"DBMEDIAUSR\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Parametros\": {\n        \"Parametro\": {\n            \"sBTRepParametros.It\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Nombre\": \"DOC\",\n                    \"Codigo\": 1,\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.100.14.2:9280/bantotal/servlet/com.dlya.bantotal.odwsbt_ConsultaReportesSQL?TarjPendEntrega",
+							"protocol": "http",
+							"host": [
+								"10",
+								"100",
+								"14",
+								"2"
+							],
+							"port": "9280",
+							"path": [
+								"bantotal",
+								"servlet",
+								"com.dlya.bantotal.odwsbt_ConsultaReportesSQL"
+							],
+							"query": [
+								{
+									"key": "TarjPendEntrega",
+									"value": null
+								}
+							]
+						},
+						"description": "Devuelve si el cliente tiene tarjetas pendiente de entrega."
+					},
+					"response": [
+						{
+							"name": "Tarjeta pendiente de entrega",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"91f3624046088C9B822DF6FA\"\n    },\n    \"Parametros\": {\n        \"Parametro\": {\n            \"sBTRepParametros.It\": [\n                {\n                    \"Tipo\": \"Texto\",\n                    \"Nombre\": \"DOC\",\n                    \"Codigo\": 1,\n                    \"Valor\": \"1537096\"\n                }\n            ]\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://10.100.14.2:9280/btservices/servlet/com.dlya.bantotal.odwsbt_ConsultaReportesSQL?TarjPendEntrega",
+									"protocol": "https",
+									"host": [
+										"10",
+										"100",
+										"14",
+										"2"
+									],
+									"port": "9280",
+									"path": [
+										"btservices",
+										"servlet",
+										"com.dlya.bantotal.odwsbt_ConsultaReportesSQL"
+									],
+									"query": [
+										{
+											"key": "TarjPendEntrega",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1256"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(6.1.26)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Btinreq\": {\n        \"Device\": \"10.103.103.31\",\n        \"Usuario\": \"RUIZMAU\",\n        \"Requerimiento\": \"1\",\n        \"Canal\": \"BTINTERNO\",\n        \"Token\": \"dd103af0ac088C9B822DF6FA\"\n    },\n    \"Mens\": \"\",\n    \"Result\": {\n        \"Consultas\": {\n            \"RepCons.Consulta\": [\n                {\n                    \"Correlativo\": \"10\",\n                    \"Top\": \"13\",\n                    \"Columnas\": {\n                        \"RepCols.Columna\": [\n                            {\n                                \"Numero\": \"5\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"1\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"2\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"4\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"4\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"PRODUCTO\"\n                            },\n                            {\n                                \"Numero\": \"10\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"PIN A- TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"PIN B- TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"PIN C- TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"PIN D- TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"PIN - TARJETA DE DEBITO\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"DESCRIPCION\"\n                            },\n                            {\n                                \"Numero\": \"15\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"10\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"10\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"SUCURSAL\"\n                            },\n                            {\n                                \"Numero\": \"20\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"XXXXXX\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"XXXXXX\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"NROTARJETA\"\n                            },\n                            {\n                                \"Numero\": \"25\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"25602976\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"25602976\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"OPERACION\"\n                            },\n                            {\n                                \"Numero\": \"30\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"20111115\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"20111115\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"DESDEFECHA\"\n                            },\n                            {\n                                \"Numero\": \"35\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"AUTORIZAR Inclusion/Exclusion del Invent. Inicial\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"INSTANCIA\"\n                            },\n                            {\n                                \"Numero\": \"40\",\n                                \"Tipo\": \"T\",\n                                \"Filas\": {\n                                    \"RepFilas.Fila\": [\n                                        {\n                                            \"Numero\": \"1\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"2\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"3\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"4\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"5\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"6\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"7\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"8\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"9\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"10\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"11\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"12\",\n                                            \"Valor\": \"20120123\"\n                                        },\n                                        {\n                                            \"Numero\": \"13\",\n                                            \"Valor\": \"20120123\"\n                                        }\n                                    ]\n                                },\n                                \"Descripcion\": \"FECHAINSTANCIA\"\n                            }\n                        ]\n                    },\n                    \"Nombre\": \"TARJ_PEND_ENTREGA\"\n                }\n            ]\n        },\n        \"Usuario\": \"RUIZMAU\",\n        \"Codigo\": \"90101\",\n        \"Nombre\": \"WS PERSONAS TOTEM\",\n        \"Parametros\": {\n            \"RepParm.Parametro\": [\n                {\n                    \"Tipo\": \"Entero\",\n                    \"Codigo\": \"2\",\n                    \"Nombre\": \"CTA\",\n                    \"Valor\": \"1711910\"\n                }\n            ]\n        }\n    },\n    \"Erroresnegocio\": {\n        \"BTErrorNegocio\": []\n    },\n    \"Btoutreq\": {\n        \"Numero\": \"3230\",\n        \"Estado\": \"OK\",\n        \"Servicio\": \"ConsultaReportesSQL.TarjPendEntrega\",\n        \"Fecha\": \"2020-09-17\",\n        \"Requerimiento\": \"1\",\n        \"Hora\": \"02:36:52\",\n        \"Canal\": \"BTINTERNO\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

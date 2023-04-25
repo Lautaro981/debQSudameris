@@ -1,0 +1,55 @@
+@(message: String)
+
+@main("Conector debQ") {
+<div ng-controller="dashCtrl" class="main-container">
+    <div class="main-navbar main-navbar--expanded js-main-menu">
+        <div class="main-navbar__logo-container">
+            <img ng-src='{{logoPath}}' alt="logo debmedia" class="main-navbar__logo">    
+        </div>
+        <ul 
+        main-menu
+        class="main-navbar__menu"
+        data="profileMenu"
+        path="{{mainMenuPath}}"
+        func="changeState">
+        </ul>
+    </div>
+    <div class="content-container content-container--expanded">
+        <div class="topbar">
+            <div ncy-breadcrumb></div>
+            <a mobile-menu class="topbar__mobile-menu js-menu-toogle">
+                <span class="topbar__hamburger-menu"></span>
+            </a>
+            <div dash-config class="dash-config">
+                <div class="dash-config__info">
+                    <span class="dash-config__user">{{loginName}}</span>
+                    <span class="dash-config__branch">{{branch}}</span>
+                </div>
+                <div class="dash-config__edit js-edit">
+                    <i class="fa fa-cog js-edit"></i>
+                </div>
+                <div class="dash-config__popup js-popup">
+                    <span>Sistema</span>
+                    <div class="dash-select-box">
+                        <select>
+                            <option value="1">debSign</option>
+                            <option value="2">debQ</option>
+                        </select>
+                    </div>
+                    <span>Sucursal</span>
+                    <div class="dash-select-box">
+                        <select>
+                            <option selected value=''>Sucursal 1</option>
+                            <option value=''>Sucursal 2</option>
+                        </select>
+                    </div>
+                    <button ng-click="logout()" class="dash-button">Logout</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <ui-view ></ui-view>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,39 @@
+<div class="row" data-ng-init="init()">
+    <div class="col-md-12">
+        <div class="theme-default debcontainer">
+            <div class="header-debcontainer">
+                <p>{{label}}
+                    <span class="btn-group pull-right">
+                        <button type="button" class="btn btn-info" ui-sref="{{name}}">Atrás</button>
+                    </span>
+                </p>
+            </div>
+            <div class="content-debcontainer">
+                <div class="row" style="padding: 0 1em">
+                    <div class="col-md-12">
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr>
+                                <th class="col-md-4">ID</th>
+                                <td class="col-md-8">{{ current.id }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-md-4">Número de segmento</th>
+                                <td class="col-md-8">{{ current.segment  }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-md-4">Tipo de cliente DebQ</th>
+                                <td class="col-md-8">{{ current.qCustomerType.label  }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-md-4">ID cliente DebQ</th>
+                                <td class="col-md-8">{{ current.qCustomerType.id_q  }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
